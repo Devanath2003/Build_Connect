@@ -4,4 +4,4 @@ app = FastAPI ()
 
 @app.get("/")
 def home():
-    return {"message":"BuildConnect API running."}
+    return {"message":"BuildConnect API superbb."}
