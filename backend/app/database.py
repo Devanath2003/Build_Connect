@@ -14,7 +14,7 @@ Base = declarative_base()
 # A dependency to get the daatabase session
 def get_db():
     db = SessionLocal()
-    try:
+    try:  
         yield db
     finally:
         db.close()

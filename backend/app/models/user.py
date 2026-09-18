@@ -5,6 +5,8 @@ from sqlalchemy.dialects.postgresql import UUID
 import enum
 from app.database import Base
 
+from sqlalchemy.orm import relationship
+
 # Roles as Enum (enumeration)
 class UserRole(str, enum.Enum):
     CLIENT = "CLIENT"
@@ -25,3 +27,4 @@ class User(Base):
     is_verified = Column(Boolean, default=False)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
+    professional_profile = relationship("ProfessionalProfile", back_populates="user", uselist=False)

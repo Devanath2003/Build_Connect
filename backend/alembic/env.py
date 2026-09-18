@@ -10,6 +10,7 @@ import os
 from app.config import DATABASE_URL
 from app.database import Base
 from app.models.user import User # To make Alembic see the model
+from app.models.professional import ProfessionalProfile
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

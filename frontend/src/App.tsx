@@ -1,5 +1,7 @@
 
 import {Routes, Route} from "react-router-dom";
+import { useEffect } from "react";
+import useAuthStore from "./store/authStore";
 
 
 
@@ -11,6 +13,16 @@ import RegisterPage from "./pages/RegisterPage";
 
 
 function App() {
+  const token = useAuthStore((state) => state.token);
+  const fetchCurrentUser = useAuthStore(
+    (state) => state.fetchCurrentUser
+  );
+
+  useEffect(() => {
+    if (token) {
+      fetchCurrentUser();
+    }
+  }, [token,fetchCurrentUser]);
   return (
     <>
       <Navbar />
