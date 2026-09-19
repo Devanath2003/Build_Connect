@@ -1,5 +1,11 @@
 # The whole process is for a level of abstraction.
 
+"""
+Alembic mainly work with the schema of the database, like creating the tables and manipulating the columns in it,
+while SQLAlchemy works with database connection and ORM - which is setting up queries
+for insertion or query operations - means operations we do on data of the database
+"""
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from app.config import DATABASE_URL
