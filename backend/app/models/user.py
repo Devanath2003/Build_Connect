@@ -1,3 +1,20 @@
+""" 
+Need of Alembic !
+
+so whenever we decides to make changes in a table or something in our current database,
+inorder to reflect that in the database , we need to do migration - so alembic 
+help to change the schema or reflect it
+
+so by doing that, the sql for the corresponding change (eg- ALTER TABLE users...), will be generated
+and applies changes to postgreSQL database
+
+we can do upgrade and degrade, like savestates (but it can only restore the structure not data)
+"""
+
+
+
+
+
 import uuid
 from datetime import datetime, timezone
 from sqlalchemy import Column, String, Boolean, DateTime, Enum
